@@ -1,6 +1,6 @@
 # ntrip-client
 
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.christiansidak/ntrip-client)](https://central.sonatype.com/artifact/io.github.christiansidak/ntrip-client)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.christian-sidak/ntrip-client)](https://central.sonatype.com/artifact/io.github.christian-sidak/ntrip-client)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 Lightweight Java NTRIP client for receiving GNSS RTK correction data. Zero runtime dependencies. Java 11+.
@@ -11,7 +11,7 @@ Lightweight Java NTRIP client for receiving GNSS RTK correction data. Zero runti
 
 ```xml
 <dependency>
-    <groupId>io.github.christiansidak</groupId>
+    <groupId>io.github.christian-sidak</groupId>
     <artifactId>ntrip-client</artifactId>
     <version>0.1.0</version>
 </dependency>
@@ -20,7 +20,7 @@ Lightweight Java NTRIP client for receiving GNSS RTK correction data. Zero runti
 ### Gradle
 
 ```groovy
-implementation 'io.github.christiansidak:ntrip-client:0.1.0'
+implementation 'io.github.christian-sidak:ntrip-client:0.1.0'
 ```
 
 ## Usage
@@ -28,8 +28,8 @@ implementation 'io.github.christiansidak:ntrip-client:0.1.0'
 ### List available mountpoints
 
 ```java
-import io.github.christiansidak.ntrip.client.NtripClient;
-import io.github.christiansidak.ntrip.sourcetable.Sourcetable;
+import io.github.christian-sidak.ntrip.client.NtripClient;
+import io.github.christian-sidak.ntrip.sourcetable.Sourcetable;
 
 NtripClient client = new NtripClient.Builder("rtk2go.com", 2101).build();
 
@@ -43,8 +43,8 @@ for (var stream : table.getStreams()) {
 ### Stream RTCM corrections
 
 ```java
-import io.github.christiansidak.ntrip.client.NtripClient;
-import io.github.christiansidak.ntrip.protocol.NtripVersion;
+import io.github.christian-sidak.ntrip.client.NtripClient;
+import io.github.christian-sidak.ntrip.protocol.NtripVersion;
 
 NtripClient client = new NtripClient.Builder("rtk2go.com", 2101)
     .credentials("user@example.com", "none")
@@ -96,7 +96,7 @@ client.sendGga("$GPGGA,115740.00,4158.8442,N,09147.4418,W,1,08,0.9,255.7,M,-32.0
 ### Use the RTCM decoder standalone
 
 ```java
-import io.github.christiansidak.ntrip.rtcm.RtcmDecoder;
+import io.github.christian-sidak.ntrip.rtcm.RtcmDecoder;
 
 RtcmDecoder decoder = new RtcmDecoder(inputStream);
 decoder.decode(frame -> {
